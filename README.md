@@ -12,3 +12,7 @@ La parte di raccogliere le palline nell'arena non è stata sviluppata per nulla.
 La nostra idea era quella di utilizzare 2 arduini e farli comunicare in seriale, uno di essi poi avremme comunicato tutto all'EV3.
 Alla fine abbiamo abbandonato l'idea ed abbiamo deciso che sarebbe bastato un arduino solo e al massimo il secondo solo per il giroscopio ma alla fine non l'abbiamo fatto.
 Lo schema elettrico non è aggiornato, una cosa importante è mettere degli switch tra tx rx dei due arduini perchè altrimenti quando sono collegati non si può usare la seriale USB per caricarci il software.
+
+Il file i2c.c è solo una prova.
+
+In bocca al lupo!
