@@ -8,3 +8,5 @@ Se slitta e scivola in curva non è il software ma il robot non sbilanciato.
 Il file Good Mistake.c è l'ultima bozza che abbiamo sviluppato, non è ottimizzata e si basa sulle funzioni che vengono importate dal file _function.h_.
 
 La parte di raccogliere le palline nell'arena non è stata sviluppata per nulla.
+
+Lo schema elettrico non è aggiornato, una cosa importante è mettere degli switch tra tx rx dei due arduini perchè altrimenti quando sono collegati non si può usare la seriale USB per caricarci il software.
