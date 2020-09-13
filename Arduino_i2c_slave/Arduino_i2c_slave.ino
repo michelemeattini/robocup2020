@@ -50,18 +50,6 @@ void setup() {
   Serial.begin(115200);
 }
 void loop() {
-  /*Serial.write('A');
-    OutBuffer[0] = Serial.read();
-    Serial.println(OutBuffer[0]);
-    Serial.write('B');
-    OutBuffer[1] = Serial.read();
-    Serial.println(OutBuffer[1]);
-    Serial.write('C');
-    OutBuffer[2] = Serial.read();
-    Serial.println(OutBuffer[2]);
-    Serial.write('D');
-    OutBuffer[3] = Serial.read();
-    Serial.println(OutBuffer[3]);*/
   OutBuffer[0] = !digitalRead(BT_PIN);
   OutBuffer[1] = !digitalRead(LIMIT_DX);
   OutBuffer[2] = !digitalRead(LIMIT_SX);
@@ -87,6 +75,6 @@ void Request() {
 // Routine di risposta per l'evento di ricezione caratteri dall'IIC
 void Receive(int Bytes) {
   if (Wire.read() == b1) {
-    //bel reset
+
   }
 }

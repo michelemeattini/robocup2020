@@ -1,4 +1,4 @@
-void muovi(int dx, int sx, int time=0){
+void muovi(int dx, int sx, int time=0){ // se gli dai come parametri le velocità dei motori e basta lui le muove finchè richiami la funzione, se dai anche il tempo li muove per quel tempo
 	if(time!=0){
 		setMotorSpeed(motorDx, dx);
 		setMotorSpeed(motorSx, sx);
@@ -8,10 +8,11 @@ void muovi(int dx, int sx, int time=0){
 		setMotorSpeed(motorSx, sx);
 	}
 }
-void muori(){
+void muori(){ //blocca il robot finchè non riavvii il programma
 	muovi(0,0);
 	while(1);
 }
+//i parametri dei colori sono da settare ovviamente
 bool controlloVerde(long red, long green, long blue){
 	if(green>25 && green<45 && blue>8 && blue<20 && red>3 && red<12) return true;
 	else return false;
@@ -23,7 +24,7 @@ bool controlloVerde0(long red, long green, long blue){
 bool controlloVerdeDx(){
 	return controlloVerde(redValueDx, greenValueDx, blueValueDx);
 }
-bool controlloAlzato(long red, long green, long blue){
+bool controlloAlzato(long red, long green, long blue){ //controlla se il robot è alzato, non funziona a volte quando è il robot è inclinato in salita
 	if(green<6 && green<6 && blue<6 ) return true;
 	else return false;
 }
@@ -107,7 +108,7 @@ void verdeSx(){
 		muovi(30,-30);
 	}
 }
-void doppioVerde(){
+void doppioVerde(){ //procedura per il doppio verde, è programmata ma una volta aggiunti i sensori dell'arduino il gioco è fatto
 	muovi(-30,-30);
 	delay(200);
 	while(!grigino(redValueDx, greenValueDx, blueValueDx)){
@@ -117,7 +118,7 @@ void doppioVerde(){
 	muovi(-30,-30);
 	delay(500);
 }
-void evitaOstacolo(){
+void evitaOstacolo(){ //procedura per evitare l'ostacolo
 	muovi(-50,-50);
 	delay(400);
 	muovi(-50,50);
@@ -129,11 +130,11 @@ void evitaOstacolo(){
 	muovi(50,50);
 	delay(350);
 	while(!grigino(redValueDx, greenValueDx, blueValueDx)){
-	if(!grigino(redValueSx, greenValueSx, blueValueSx)){ //se prende il nero con il sensore di sx ha sbagliato e deve raddrizzarsi
-		//procedura per raddrizzarsi
-	} else {
-		muovi(60,15);
-	}
+		if(!grigino(redValueSx, greenValueSx, blueValueSx)){ //se prende il nero con il sensore di sx ha sbagliato e deve raddrizzarsi
+			//procedura per raddrizzarsi da scrivere
+		} else {
+			muovi(60,15);
+		}
 	}
 	mode=0;
 }
